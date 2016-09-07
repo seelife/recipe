@@ -1,0 +1,92 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
+
+
+
+
+$navbar-default-bg: #eff2f4;
+$navbar-default-border: #d5dde2;
+
+
+
+
+
+
+
+
+.center {
+  text-align: center;
+
+  }
+
+h1, h2, h3, h4 {
+ line-height: 1;
+
+ }
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+.left {
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.midrow {
+  text-align: left;
+}
+
+.footer{
+  margin-top: 25px;
+  border-top: 1px solid #d1d1d1;
+  color: #777;
+  padding-top: 10px;
+}
+//.navbar {
+//  padding-bottom: -1em;
+//}
+
+
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+  //@import "bootstrap/theme";
+
+  //body{
+  //  padding-top: 6em;
+  //}
+
+
+
+
+
+//  .navbar-default .navbar-nav > .open > a,
+//  .navbar-default .navbar-nav > .active > a {
+//    background-image: -webkit-linear-gradient(top, darken($navbar-default-bg, 2%) 0%, $navbar-default-bg 100%);
+//    background-image: -o-linear-gradient(top, darken($navbar-default-bg, 2%) 0%, $navbar-default-bg 100%);
+//    background-image: linear-gradient(to bottom, darken($navbar-default-bg, 2%) 0%, $navbar-default-bg 100%);
+//    background-repeat: repeat-x;
+//    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAE6FA', endColorstr='#FFC9ECFB', GradientType=0);
+//    -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.1);
+//    box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.1);
+//  }
+
+
+//    .navbar .navbar-default .container .container-fluid .navbar-header {
+//    background-color: $navbar-default-bg;
+//    border-color: $navbar-default-border;
+
+//    }
+
+
+@import "bootstrap-material-design"
