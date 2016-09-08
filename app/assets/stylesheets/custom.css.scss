@@ -1,44 +1,51 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+//@import "bootstrap/variables";
+
+
+
+
+//$navbar-default-bg: #eff2f4;
+//$navbar-default-border: #d5dde2;
+
+
+//@brand-primary: @teal;
+//@brand-success: @green;
+//@brand-danger: @red;
+//@brand-warning: @deep-orange;
+//@brand-info: @light-blue;
 
 
 
 
 
-$navbar-default-bg: #eff2f4;
-$navbar-default-border: #d5dde2;
+//.center {
+//  text-align: center;
 
+//  }
 
-@brand-primary: @teal;
-@brand-success: @green;
-@brand-danger: @red;
-@brand-warning: @deep-orange;
-@brand-info: @light-blue;
+//h1, h2, h3, h4 {
+// line-height: 1;
+//}
 
-
-
-
-
-.center {
-  text-align: center;
-
-  }
-
-h1, h2, h3, h4 {
- line-height: 1;
-
- }
-
-h1 {
+//h1 {
+//  font-size: 3em;
+//  letter-spacing: -2px;
+//  margin-bottom: 30px;
+//  text-align: center;
+//}
+.page_title{
   font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: center;
+
 }
 
+
 h2 {
-  font-size: 1.2em;
+  font-size: 1.7em;
   margin-bottom: 30px;
-  text-align: center;
+  margin-left: 1em;
+  text-align: left;
   font-weight: normal;
   color: #777;
 }
@@ -57,13 +64,33 @@ h2 {
   color: #777;
   padding-top: 10px;
 }
+
+.chef_info{
+
+}
+
+.gravatar {
+  border-radius: 2px;
+}
+
+
+.jumbotron.text-centered{
+  text-align: center;
+}
+
+
 //.navbar {
 //  padding-bottom: -1em;
 //}
 
+//hr {
+//  color: #d1d1d1
+//}
 
-  @import "bootstrap-sprockets";
-  @import "bootstrap";
+
+
+
+  //@import "bootstrap";
   //@import "bootstrap/theme";
 
   //body{

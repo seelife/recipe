@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+  <div class="page_title">
+    <h1>   All Recipes</h1>
+  </div>
+
+  <hr color=#d1d1d1>
+</div>
+
+
+<% @recipes.each do |recipe| %>
+  <div class="col-md-6 col-xs-12">
+
+
+  <div class="panel">
+    <div class="panel-heading">
+  <h2 class="panel-title">    <%= link_to recipe.name.titleize, recipe_path(recipe) %></h2>
+</div>
+    <div class="panel-body">
+
+
+
+      <div class="col-md-4 col-sm-4 col-xs-4 pull-left">
+        <section class="chef_info">
+
+            <%= gravatar_for recipe.chef, size: 100 %>
+            <div>
+                <span><small>Chef <%= recipe.chef.chefname %> </small></span>
+            </div>
+
+
+        </section>
+
+      </div>
+    <div class="col-md-6 col-sm-7 col-xs-7 col-xs-offset-1 col-sm-offset-1">
+
+      <p>
+        <%= recipe.summary %>
+      </p>
+
+      </div>
+    </div>
+    <div class="panel-footer text-right">
+<span><small><%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+
+      </div>
+
+    </div>
+  </div>
+
+<% end %>
+</div>
