@@ -5,6 +5,36 @@
 
 
 
+.nav {
+  padding-top: 8px;
+
+}
+
+.navbar-nav {
+  padding-top: 6px;
+  height: auto;
+}
+
+.navbar-header {
+  padding-top: 4px;
+  height: auto;
+}
+
+
+.navbar-form {
+  padding-top: 8px;
+  height: auto;
+}
+
+.form-group {
+  padding-top: 10px;
+  height: auto;
+}
+
+.form-control {
+  padding-top: 5px;
+  height: auto;
+}
 //$navbar-default-bg: #eff2f4;
 //$navbar-default-border: #d5dde2;
 
@@ -63,6 +93,7 @@ h2 {
   border-top: 1px solid #d1d1d1;
   color: #777;
   padding-top: 10px;
+  padding-left: 2em;
 }
 
 .chef_info{
@@ -76,6 +107,23 @@ h2 {
 
 .jumbotron.text-centered{
   text-align: center;
+}
+
+
+.well {
+  background-color: #c3c3c3;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #777;
+  border-radius: 2px;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+input {
+  height: auto !important;
 }
 
 

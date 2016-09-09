@@ -1,31 +1,50 @@
-<p>
-  <h1>
-    <%= @recipe.name.titleize %>
-  </h1>
-</p>
+<%= render 'shared/page_title', title: @recipe.name.titleize  %>
+
+
 <div class="row">
-  <div class="col-md-4 pull-right center">
-    <%= gravatar_for @recipe.chef, size: 200 %>
+
+  <div class="col-md-9 col-sm-9 col-xs-12">
+    <h3>
+      <%= @recipe.summary.capitalize %>
+    </h3>
+    <br>
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">
+
+            Steps:
+
+        </div>
+      </div>
+      <div class="panel-body">
+        <p>
+          <%= simple_format(@recipe.description.capitalize) %>
+        </p>
+
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-md-12">
+            <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn-sm btn-success pull-right" %>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-3 col-xs-12 pull-right">
+
+    <%= gravatar_for @recipe.chef, size: 190 %>
     <p>
       <h5>
-        Brought to you by Chef <%= @recipe.chef.chefname.titleize %>
+        <span>By Chef <%= @recipe.chef.chefname.titleize %> <%= time_ago_in_words(@recipe.created_at) %> ago</span>
       </h5>
     </p>
   </div>
-  <div class="col-md-8">
-    <h3>
-      <%= @recipe.summary %>
-    </h3>
-    <br>
-    <div class="well">
-      <p>
-        <strong>
-          Steps:
-        </strong>
-      </p>
-      <%= @recipe.description %>
-    </div>
-  </div>
+
 </div>
 
 <h5>

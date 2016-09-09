@@ -1,0 +1,43 @@
+<%= render 'shared/errors', obj: @recipe %>
+
+<div class="container-fluid">
+
+<br>
+<div class="col-md-8 col-md-offset-2">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <%= @recipe.new_record? ? 'Add a new recipe.' : 'Edit this recipe.' %>
+</h1>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <%= form_for @recipe do |f| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        </li>
+        <br>
+        <li class="list-group-item">
+        <%= f.label :summary %>
+        <%= f.text_field :summary %>
+        </li>
+        <br>
+        <li class="list-group-item">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+        </li>
+        <br>
+        <li class="list-group-item">
+        <%= f.submit(@recipe.new_record? ? 'Create Recipe' : 'Edit Recipe', class: "btn btn-success") %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
