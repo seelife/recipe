@@ -1,16 +1,14 @@
 <%= render 'shared/page_title', title: @recipe.name.titleize  %>
 
-<% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
 <div class="row">
-<% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
   <div class="col-md-9 col-sm-9 col-xs-12">
+    <%= image_tag(@recipe.picture.url, size: "400x300", class: "gravatar") if @recipe.picture? %>
+
     <h3>
       <%= @recipe.summary.capitalize %>
     </h3>
-<% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
     <br>
     <div class="show_recipe">
-<%= image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
 
     </div>
     <div class="panel">
@@ -29,7 +27,17 @@
       </div>
       <div class="panel-footer">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-4 pull_left">
+            <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+              Like <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @recipe.thumbs_up_total %>
+            <% end %>
+            &nbsp&nbsp&nbsp&nbsp
+            <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+              Dislike <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
+            <% end %>
+
+          </div>
+          <div class="col-md-8 pull-right">
             <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn-sm btn-success pull-right" %>
 
           </div>

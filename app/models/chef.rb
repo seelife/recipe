@@ -1,5 +1,6 @@
 class Chef < ApplicationRecord
   has_many :recipes
+  has_many :likes
 
   before_save { self.email = email.downcase }
 
@@ -8,5 +9,5 @@ class Chef < ApplicationRecord
   validates :email, presence: true, length: {maximum: 105},
                     uniqueness: {case_sensitive: false}, format: {with: VALID_EMAIL_REGEX}
   #validates :description, presence: true, length: {minimum: 20, maximum: 500}
-  
+
 end

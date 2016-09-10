@@ -11,7 +11,13 @@ Rails.application.routes.draw do
 #  delete '/recipes/:id', to: 'recipes#destroy'
 
 
-  resources :recipes
+  resources :recipes do
+    member do
+      post 'like'
+    end
+  end
+
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
