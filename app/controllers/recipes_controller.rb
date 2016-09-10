@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
 
     if @recipe.save
       flash[:success] = "Success! You added a recipe."
-      redirect_to recipes_path
+      redirect_to recipe_path(@recipe)
     else
       render :new
     end
@@ -36,17 +36,17 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    if @recipe.update(recipe_params)
-      flash[:success] = "Success! You updated your recipe."
-      redirect_to recipe_path(@recipe)
-    else
-      render :edit
-    end
+      if @recipe.update(recipe_params)
+        flash[:success] = "Success! You updated your recipe."
+        redirect_to recipe_path(@recipe)
+      else
+        render :edit
+      end
   end
 
   private
 
       def recipe_params
-        params.require(:recipe).permit(:name, :summary, :description)
+        params.require(:recipe).permit(:name, :summary, :description, :picture)
       end
 end

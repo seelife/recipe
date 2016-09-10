@@ -40,6 +40,9 @@ gem 'bootstrap-material-design'
 
 #gem 'rails-assets-material-design-lite', source: 'https://rails-assets.org'
 
+gem 'carrierwave', '0.10.0'
+
+gem 'mini_magick', '3.8.0'
 
 
 

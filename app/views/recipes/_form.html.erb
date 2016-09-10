@@ -14,7 +14,7 @@
   <div class="panel-body">
 
     <div class="row">
-      <%= form_for @recipe do |f| %>
+      <%= form_for(@recipe, html: { multipart: true}) do |f| %>
       <ul class="list-group">
         <li class="list-group-item">
         <%= f.label :name %>
@@ -30,8 +30,17 @@
         <%= f.label :description %>
         <%= f.text_area :description %>
         </li>
-        <br>
         <li class="list-group-item">
+          <h5><span><strong>Upload Picture</strong></span></h5>
+        <span class= "picture">
+          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+
+        </span>
+        </li>
+        <br>
+
+        <li class="list-group-item">
+
         <%= f.submit(@recipe.new_record? ? 'Create Recipe' : 'Edit Recipe', class: "btn btn-success") %>
         </li>
         <% end %>
@@ -41,3 +50,13 @@
   </div>
   </div>
 </div>
+
+<script type=" text/javascript">
+$('#recipe_picture').bind('change', function() {
+  size_in_megabytes = this.files[0].size/1024/1024;
+  if (size_in_megabytes > 5) {
+    alert('Maximum file size is 5MB. Please choose a smaller file.');
+  }
+
+});
+</script>

@@ -1,13 +1,18 @@
 <%= render 'shared/page_title', title: @recipe.name.titleize  %>
 
-
+<% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
 <div class="row">
-
+<% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
   <div class="col-md-9 col-sm-9 col-xs-12">
     <h3>
       <%= @recipe.summary.capitalize %>
     </h3>
+<% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
     <br>
+    <div class="show_recipe">
+<%= image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
+
+    </div>
     <div class="panel">
       <div class="panel-heading">
         <div class="panel-title">
@@ -50,3 +55,8 @@
 <h5>
   <%= link_to "Return to Recipes Listing", recipes_path, class: "btn btn-warning btn-small" %>
 </h5>
+
+<div class="image">
+  <% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
+
+</div>
