@@ -2,18 +2,8 @@
 @import "bootstrap-sprockets";
 //@import "bootstrap/variables";
 
-body {
-  background-color: #fefefe !important;
 
-}
 
-a {
-  text-decoration: none !important;
-}
-
-.panel a:hover {
-  color: #2c31a1 !important;
-}
 
 .nav {
   padding-top: 8px;
@@ -134,111 +124,6 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
-}
-
-.img-responsive {
-  max-height: 500px !important;
-}
-
-.panel {
-  box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
-  height: auto;
-  transition: 0.3s !important;
-
-   }
-
-//.panel:hover {
-//       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
-//   }
-
-.btn-sm {
-     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12) !important;
-        transition: 0.3s !important;
-      }
-
-
-.btn-sm:hover {
-  box-shadow: 0 6px 12px 0 rgba(0,0,0,0.18) !important;
-    }
-
-//Material Card Design from http://bootsnipp.com/snippets/featured/material-cards
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) !important;
-     transition: 0.3s !important;
-   }
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
-}
-
-.card {
-  margin-top: 10px;
-  box-sizing: border-box;
-  border-radius: 2px;
-  background-clip: padding-box;
-}
-.card span.card-title {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-.card .card-image {
-  position: relative;
-  overflow: hidden;
-}
-.card .card-image img {
-  border-radius: 2px 2px 0 0;
-  background-clip: padding-box;
-  position: relative;
-  z-index: -1;
-}
-.card .card-image span.card-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 16px;
-}
-.card .card-content {
-  padding: 16px;
-  border-radius: 0 0 2px 2px;
-  background-clip: padding-box;
-  box-sizing: border-box;
-}
-.card .card-content p {
-  margin: 0;
-  color: inherit;
-}
-.card .card-content span.card-title {
-  line-height: 48px;
-}
-.card .card-action {
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  padding: 16px;
-}
-.card .card-action a {
-  color: #ffab40;
-  margin-right: 16px;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-}
-.card .card-action a:hover {
-  color: #ffd8a6;
-  text-decoration: none;
-}
-//end Material Card Design
-
-a:hover {
-
-}
-
-.img-responsive {
-    box-shadow: 0 1px 2px 1px rgba(0,0,0,0.16) !important;
-    transition: 0.3s !important;
-
-
 }
 
 //span.picture {

@@ -1,27 +1,83 @@
+<div class="container-fluid">
+
+
 <%= render 'shared/page_title', title: @recipe.name.titleize  %>
+<!--
+<div class="row">
+       <!-- Card Projects -->
+       <!--
+       <div class="col-md-6 col-md-offset-3">
+           <div class="card">
+               <div class="card-image">
+                 <%= image_tag(@recipe.picture.url, class: "testing") if @recipe.picture? %>
+                 <%= image_tag(@recipe.picture.url, size: "400x300", class: "gravatar") if @recipe.picture? %>
+
+                   <span class="card-title"><%= render 'shared/page_title', title: @recipe.name.titleize  %></span>
+               </div>
+
+               <div class="card-content">
+                  <%= @recipe.summary.capitalize %>
+                  <br><br>
+                  <p>
+                    <%= simple_format(@recipe.description.capitalize) %>
+                  </p>
+              </div>
+
+               <div class="card-action">
+                   <a href="#" target="new_blank">Link</a>
+                   <a href="#" target="new_blank">Link</a>
+                   <a href="#" target="new_blank">Link</a>
+                   <a href="#" target="new_blank">Link</a>
+                   <a href="#" target="new_blank">Link</a>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+-->
+
+
+
+
+
+
 
 <div class="row">
-  <div class="col-md-9 col-sm-9 col-xs-12">
-    <%= image_tag(@recipe.picture.url, size: "400x300", class: "gravatar") if @recipe.picture? %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= image_tag(@recipe.picture.url, size: "responsive", class: "img-responsive") if @recipe.picture? %>
 
-    <h3>
-      <%= @recipe.summary.capitalize %>
-    </h3>
+
     <br>
     <div class="show_recipe">
 
     </div>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+
+
+
     <div class="panel">
       <div class="panel-heading">
         <div class="panel-title">
 
-            Steps:
+            <%= @recipe.summary.capitalize %>
 
         </div>
       </div>
       <div class="panel-body">
+        <h4>
+        Steps:
+        </h4>
         <p>
           <%= simple_format(@recipe.description.capitalize) %>
+        </p>
+        <br>
+        <%= gravatar_for @recipe.chef, size: 100, class: "img-responsive" %>
+        <p>
+          <h5>
+            <span>By Chef <%= @recipe.chef.chefname.titleize %> <%= time_ago_in_words(@recipe.created_at) %> ago</span>
+          </h5>
         </p>
 
       </div>
@@ -29,11 +85,11 @@
         <div class="row">
           <div class="col-md-4 pull_left">
             <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
-              Like <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @recipe.thumbs_up_total %>
+              <i class="glyphicon glyphicon-thumbs-up"></i>&nbsp<%= @recipe.thumbs_up_total %>
             <% end %>
             &nbsp&nbsp&nbsp&nbsp
             <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
-              Dislike <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
+              <i class="glyphicon glyphicon-thumbs-down"></i>&nbsp<%= @recipe.thumbs_down_total %>
             <% end %>
 
           </div>
@@ -42,11 +98,25 @@
 
           </div>
 
+
         </div>
 
 
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
+
+        <%= gravatar_for @recipe.chef, size: 190 %>
+        <p>
+          <h5>
+            <span>By Chef <%= @recipe.chef.chefname.titleize %> <%= time_ago_in_words(@recipe.created_at) %> ago</span>
+          </h5>
+        </p>
+      </div>
+
+    </div>
+  </div>
   </div>
   <div class="col-md-3 col-sm-3 col-xs-12 pull-right">
 
@@ -67,4 +137,5 @@
 <div class="image">
   <% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
 
+</div>
 </div>

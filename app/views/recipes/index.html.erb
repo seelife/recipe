@@ -1,11 +1,27 @@
 
 <div class="container-fluid">
+<div class="row">
+
+
   <div class="page_title">
     <%= render 'shared/page_title', title: "All Recipes" %>
+
   </div>
 
-  <hr color=#d1d1d1>
-</div>
+
+
+      &nbsp<%= will_paginate %>
+
+
+  </div>
+
+
+
+
+
+
+<div class="row">
+
 
 
 <% @recipes.each do |recipe| %>
@@ -56,7 +72,9 @@
 
         </div>
         <div class="col-md-4 col-xs-6 pull-right center">
-          <span><small><%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+          <span><small>Updated <%= time_ago_in_words(recipe.updated_at) %> ago.</small></span>
+          <span><small>Added <%= time_ago_in_words(recipe.created_at) %> ago.</small></span>
+
 
 
         </div>
@@ -70,4 +88,6 @@
   </div>
 
 <% end %>
+</div>
+<%= will_paginate %>
 </div>
