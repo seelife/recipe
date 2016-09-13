@@ -1,0 +1,47 @@
+<%= render 'shared/errors', obj: @chef %>
+
+<div class="container-fluid">
+
+
+<div class="col-md-8 col-md-offset-2">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <%= @chef.new_record? ? 'Sign up now.' : 'Change your details.' %>
+</h1>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <%= form_for(@chef, html: { multipart: true}) do |f| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+        <%= f.label :chefname %>
+        <%= f.text_field :chefname %>
+        </li>
+        <br>
+        <li class="list-group-item">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+        </li>
+        <br>
+        <li class="list-group-item">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        </li>
+
+        </li>
+        <br>
+
+        <li class="list-group-item">
+
+        <%= f.submit(@chef.new_record? ? 'Register' : 'Edit Profile', class: "btn btn-success") %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

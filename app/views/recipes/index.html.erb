@@ -38,8 +38,9 @@
 
       <div class="col-md-4 col-sm-4 col-xs-4 pull-left">
         <section class="chef_info">
+          <%= link_to gravatar_for(recipe.chef, size: 100, class: "img-responsive"), chef_path(recipe.chef) %>
 
-            <%= gravatar_for recipe.chef, size: 100 %>
+
             <div>
                 <span><small>Chef <%= recipe.chef.chefname.titleize %> </small></span>
             </div>
@@ -60,8 +61,8 @@
     </div>
     <div class="panel-footer">
       <div class="row">
-        <div class="col-md-8 col-xs-6 pull_left">
-          &nbsp&nbsp&nbsp&nbsp
+        <div class="col-md-6 col-xs-4 pull-left">
+          
           <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
             <i class="glyphicon glyphicon-thumbs-up"></i>&nbsp<%= recipe.thumbs_up_total %>
           <% end %>
@@ -71,14 +72,20 @@
           <% end %>
 
         </div>
-        <div class="col-md-4 col-xs-6 pull-right center">
-          <span><small>Updated <%= time_ago_in_words(recipe.updated_at) %> ago.</small></span>
-          <span><small>Added <%= time_ago_in_words(recipe.created_at) %> ago.</small></span>
+
+        <div class="col-md-6 col-xs-8 pull-right">
+          <div class="col-xs-12">
+            <span><small>Updated <%= time_ago_in_words(recipe.updated_at) %> ago.</small></span>
+          </div>
+          <div class="col-xs-12">
+            <span><small>Added <%= time_ago_in_words(recipe.created_at) %> ago.</small></span>
+          </div>
+
+
 
 
 
         </div>
-
       </div>
 
 

@@ -10,9 +10,15 @@
     </div>
     <div class="navbar-collapse collapse navbar-inverse-collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to "All Recipes", recipes_path, id: "logo" %></li>
-        <li><%= link_to "Add Recipe", new_recipe_path %></li>
-        
+        <li><%= link_to "Recipes", recipes_path %></li>
+        <li><%= link_to "Chefs", chefs_path %></li>
+        <% if logged_in? %>
+        <li><%= link_to "Add Recipe", new_recipe_path, class: "nav__add_recipe" %></li>
+        <% else %>
+        <li><%= link_to "Register", register_path, class: "nav__register" %></li>
+
+        <% end %>
+
 
         <!--li class="dropdown">
           <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
@@ -30,20 +36,29 @@
       -->
 
       </ul>
+      <% if logged_in? %>
       <ul class="nav navbar-nav navbar-right">
 
         <li class="dropdown">
           <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">account_circle</i>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="javascript:void(0)">Action</a></li>
-            <li><a href="javascript:void(0)">Another action</a></li>
-            <li><a href="javascript:void(0)">Something else here</a></li>
+            <li><%= link_to "Chef " + current_user.chefname.titleize, chef_path(current_user) %></li>
+            <li class="divider nav__dropdown"></li>
+            <li><%= link_to "View Profile", chef_path(current_user) %></li>
+            <li><%= link_to "Edit Profile", edit_chef_path(current_user) %></li>
             <li class="divider"></li>
-            <li><a href="javascript:void(0)">Separated link</a></li>
+            <li><%= link_to "Logout", logout_path %></li>
+
           </ul>
+
         </li>
       </ul>
+      <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Sign In", login_path %></li>
+      </ul>
+      <% end %>
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" class="form-control col-md-8" placeholder="Search">

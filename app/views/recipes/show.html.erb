@@ -73,7 +73,7 @@
           <%= simple_format(@recipe.description.capitalize) %>
         </p>
         <br>
-        <%= gravatar_for @recipe.chef, size: 100, class: "img-responsive" %>
+        <%= link_to gravatar_for(@recipe.chef, size: 100, class: "img-responsive"), chef_path(@recipe.chef) %>
         <p>
           <h5>
             <span>By Chef <%= @recipe.chef.chefname.titleize %> <%= time_ago_in_words(@recipe.created_at) %> ago</span>
@@ -94,8 +94,9 @@
 
           </div>
           <div class="col-md-8 pull-right">
-            <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn-sm btn-success pull-right" %>
-
+            <% if logged_in? and @recipe.chef == current_user %>
+              <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn-sm btn-success pull-right" %>
+            <% end %>
           </div>
 
 

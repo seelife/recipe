@@ -10,4 +10,6 @@ class Chef < ApplicationRecord
                     uniqueness: {case_sensitive: false}, format: {with: VALID_EMAIL_REGEX}
   #validates :description, presence: true, length: {minimum: 20, maximum: 500}
 
+  has_secure_password
+
 end

@@ -141,13 +141,25 @@ input {
 }
 
 .panel {
-  box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
+  box-shadow: -1px 0 2px 0 rgba(0,0,0,0.12) , 1px 0 2px 0 rgba(0,0,0,0.12) , 0 1px 1px 0 rgba(0,0,0,0.24) !important;
+  webkit-transition: all .15s cubic-bezier(.33,.66,.66,1) !important;
+  transition: all .15s cubic-bezier(.33,.66,.66,1) !important;
+         //  -webkit-backface-visibility: hidden !important;
+         //   -webkit-perspective: 1000px !important;
+       //  -webkit-transform-style: preserve-3d !important;
+       //    -webkit-transform: translateZ(0) !important;
+          transform: translateZ(0) !important;
+  //box-shadow: 0 1px 2px rgba(0,0,0,.2) !important;
   height: auto;
   transition: 0.3s !important;
 
    }
 
 //.panel:hover {
+
+//  box-shadow: 0px 2px 1px 1px rgba(0,0,0,0.16) !important;
+//  webkit-transition: all .15s cubic-bezier(.33,.66,.66,1) !important;
+//  transition: all .15s cubic-bezier(.33,.66,.66,1) !important;
 //       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
 //   }
 
@@ -240,6 +252,26 @@ a:hover {
 
 
 }
+
+.nav .navbar-nav .navbar-right .dropdown .dropdown-menu {
+  color: inherit;
+}
+
+.nav__register {
+  color: #bbffc2 !important;
+}
+.nav__add_recipe {
+  color: #bbffc2 !important;
+}
+
+.col-md-6 .col-xs-8 .col-xs-12 {
+  text-align: right;
+}
+
+
+//.nav__dropdown {
+//  color: #969696 !important;
+//}
 
 //span.picture {
 //  margin-top: 10px;

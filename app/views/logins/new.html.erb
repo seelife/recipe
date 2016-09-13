@@ -1,0 +1,39 @@
+  <%= render 'shared/page_title', title: 'Sign In' %>
+
+<div class="container-fluid">
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">Please enter your email and password.</h1>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+
+              <ul class="list-group">
+
+                  <%= form_tag '/login' do %>
+                    <li class="list-group-item">
+                    <%= label_tag :email %>
+                    <%= text_field_tag :email  %>
+                    </li>
+                    <br>
+
+                    <li class="list-group-item">
+                    <%= label_tag :password  %>
+                    <%=  password_field_tag :password %>
+                    </li>
+                    <br>
+
+                    <li class="list-group-item">
+                    <%= submit_tag 'Login', class: 'bt btn-success'  %>
+                    </li>
+                  <% end %>
+              </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
