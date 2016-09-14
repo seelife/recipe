@@ -10,12 +10,12 @@
     </div>
     <div class="navbar-collapse collapse navbar-inverse-collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Recipes", recipes_path %></li>
-        <li><%= link_to "Chefs", chefs_path %></li>
+        <li class="<%= 'active' if current_page?(recipes_path) %>"><%= link_to "Recipes", recipes_path %></li>
+        <li class="<%= 'active' if current_page?(chefs_path) %>"><%= link_to "Chefs", chefs_path %></li>
         <% if logged_in? %>
-        <li><%= link_to "Add Recipe", new_recipe_path, class: "nav__add_recipe" %></li>
+        <li class="<%= 'active' if current_page?(new_recipe_path) %>"><%= link_to "Add Recipe", new_recipe_path, class: "nav__add_recipe" %></li>
         <% else %>
-        <li><%= link_to "Register", register_path, class: "nav__register" %></li>
+        <li class="<%= 'active' if current_page?(register_path) %>"><%= link_to "Register", register_path, class: "nav__register" %></li>
 
         <% end %>
 
@@ -56,7 +56,7 @@
       </ul>
       <% else %>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign In", login_path %></li>
+        <li class="<%= 'active' if current_page?(login_path) %>"><%= link_to "Sign In", login_path %></li>
       </ul>
       <% end %>
       <form class="navbar-form navbar-right">
@@ -66,5 +66,9 @@
       </form>
 
     </div>
+  
+
+
+
   </div>
 </div>

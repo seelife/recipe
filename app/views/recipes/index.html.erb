@@ -10,6 +10,7 @@
 
 
 
+
       &nbsp<%= will_paginate %>
 
 
@@ -62,7 +63,7 @@
     <div class="panel-footer">
       <div class="row">
         <div class="col-md-6 col-xs-4 pull-left">
-          
+
           <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
             <i class="glyphicon glyphicon-thumbs-up"></i>&nbsp<%= recipe.thumbs_up_total %>
           <% end %>

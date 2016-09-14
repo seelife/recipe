@@ -1,5 +1,15 @@
 <div class="container-fluid">
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li class="active">
+        <%= link_to "View", chef_path %>
+      </li>
 
+      <li>
+        <%= link_to "Edit", edit_chef_path %>
+      </li>
+    </ul>
+  </div>
 
 <%= render 'shared/page_title', title: "Chef " + @chef.chefname.titleize  %>
 <div class="row">
