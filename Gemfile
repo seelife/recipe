@@ -44,6 +44,8 @@ gem 'carrierwave', '0.10.0'
 
 gem 'mini_magick', '3.8.0'
 
+#gem 'fog'
+
 gem 'will_paginate', '3.1.0'
 
 gem 'bootstrap-will_paginate', '0.0.10'
