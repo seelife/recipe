@@ -10,8 +10,9 @@
 
 
 
-
+    <ul class="pagination pagination-sm">
       &nbsp<%= will_paginate %>
+    </ul>
 
 
   </div>
@@ -56,15 +57,16 @@
       <p>
         <%= recipe.summary %>
       </p>
-
+      <% if recipe.styles.any? %>
       <p>
         Styles: <%= render recipe.styles %>
       </p>
-
+      <% end %>
+      <% if recipe.ingredients.any? %>
       <p>
         Ingredients: <%= render recipe.ingredients %>
       </p>
-
+      <% end %>
       </div>
     </div>
     <div class="panel-footer">
@@ -104,5 +106,7 @@
 
 <% end %>
 </div>
-<%= will_paginate %>
+<ul class="pagination pagination-sm">
+  &nbsp<%= will_paginate %>
+</ul>
 </div>

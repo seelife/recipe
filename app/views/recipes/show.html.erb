@@ -66,15 +66,18 @@
         </div>
       </div>
       <div class="panel-body">
+        <% if @recipe.styles.any? %>
         <h4>
         <p>
           Styles: <%= render @recipe.styles %>
         </p>
-
+        <% end %>
+        <% if @recipe.ingredients.any? %>
         <p>
           Ingredients: <%= render @recipe.ingredients %>
         </p>
         </h4>
+        <% end %>
         <hr>
         <h4>
         Steps:
@@ -105,8 +108,11 @@
 
           </div>
           <div class="col-md-8 pull-right">
-            <% if logged_in? and @recipe.chef == current_user %>
+            <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
               <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn-sm btn-success pull-right" %>
+            <% end %>
+            <% if logged_in? and current_user.admin? %>
+              <%= link_to "[Delete Recipe]", @recipe, method: :delete, data: {confirm: "Are you sure?"} %>
             <% end %>
           </div>
 
