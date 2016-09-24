@@ -2,7 +2,7 @@
   <div class="row">
     <ul class="nav nav-pills">
       <li class="active">
-        <%= link_to "View", chef_path %> 
+        <%= link_to "View", chef_path %>
       </li>
 
       <li>
@@ -23,9 +23,10 @@
     <span>Joined <%= time_ago_in_words(@chef.created_at) %> ago.</span>
   </div>
 
-  <%= will_paginate @recipes %>
-</div>
 
+</div>
+<hr>
+<%= will_paginate @recipes %>
 
 
 

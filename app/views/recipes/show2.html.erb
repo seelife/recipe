@@ -116,10 +116,29 @@
 
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
 
+        <%= gravatar_for @recipe.chef, size: 190 %>
+        <p>
+          <h5>
+            <span>By Chef <%= @recipe.chef.chefname.titleize %> <%= time_ago_in_words(@recipe.created_at) %> ago</span>
+          </h5>
+        </p>
+      </div>
+
+    </div>
   </div>
   </div>
+  <div class="col-md-3 col-sm-3 col-xs-12 pull-right">
 
+    <%= gravatar_for @recipe.chef, size: 190 %>
+    <p>
+      <h5>
+        <span>By Chef <%= @recipe.chef.chefname.titleize %> <%= time_ago_in_words(@recipe.created_at) %> ago</span>
+      </h5>
+    </p>
+  </div>
 
 </div>
 
@@ -127,5 +146,8 @@
   <%= link_to "Return to Recipes Listing", recipes_path, class: "btn btn-warning btn-small" %>
 </h5>
 
+<div class="image">
+  <% image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
 
+</div>
 </div>

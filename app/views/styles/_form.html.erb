@@ -1,0 +1,35 @@
+<%= render 'shared/errors', obj: @style %>
+
+<div class="container-fluid">
+
+<br>
+<div class="col-md-8 col-md-offset-2">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <%= @style.new_record? ? 'Add a new Style.' : 'Edit this Style.' %>
+</h1>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <%= form_for(@style, html: { multipart: true}) do |f| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        </li>
+
+
+        <li class="list-group-item">
+
+        <%= f.submit(@style.new_record? ? 'Create Style' : 'Edit Style', class: "btn btn-success") %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

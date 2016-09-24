@@ -1,17 +1,16 @@
-
 <div class="container-fluid">
 <div class="row">
 
 
   <div class="page_title">
-    <%= render 'shared/page_title', title: "All Recipes" %>
+    <%= render 'shared/page_title', title: @style.name.titleize + " Recipes"  %>
 
   </div>
 
 
 
 
-      &nbsp<%= will_paginate %>
+      &nbsp<%= will_paginate @recipes %>
 
 
   </div>
@@ -25,7 +24,7 @@
 
 
 
-<% @recipes.each do |recipe| %>
+<% @style.recipes.each do |recipe| %>
   <div class="col-md-6 col-xs-12">
 
 
@@ -104,5 +103,5 @@
 
 <% end %>
 </div>
-<%= will_paginate %>
+<%= will_paginate @recipes %>
 </div>

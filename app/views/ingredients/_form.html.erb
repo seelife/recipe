@@ -1,0 +1,35 @@
+<%= render 'shared/errors', obj: @ingredient %>
+
+<div class="container-fluid">
+
+<br>
+<div class="col-md-8 col-md-offset-2">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <%= @ingredient.new_record? ? 'Add a new Ingredient.' : 'Edit this Ingredient.' %>
+</h1>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <%= form_for(@ingredient, html: { multipart: true}) do |f| %>
+      <ul class="list-group">
+        <li class="list-group-item">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        </li>
+
+
+        <li class="list-group-item">
+
+        <%= f.submit(@ingredient.new_record? ? 'Create Ingredient' : 'Edit Ingredient', class: "btn btn-success") %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

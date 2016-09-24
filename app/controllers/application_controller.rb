@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def require_user
     if !logged_in?
       flash[:danger] = "Oops! Please sign in before you attempt to perform that action."
-      redirect_to :back
+      redirect_to login_path
 
     else
 
